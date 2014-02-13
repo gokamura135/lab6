@@ -43,10 +43,16 @@ function addProject(result) {
 		'<p><small>' + result['date'] + '</small></p></a>'+
 		'<p>' + result['summary'] +'</p>';
 	
-	console.log(str);
+	var projectID = $('.project').attr('id');
+	// get rid of 'project' from the front of the id 'project3'
+	var idNumber = projectID.substr('project'.length);
 	
+	//console.log(str);
+	var selectingid = "#project" + String(result['id']);
+	console.log(selectingid);
+	//var selector = $(selectingid+".project .thumbnail .details");
 	
-	$(".project .thumbnail .details").html(str);
+	$(selectingid +".project .thumbnail .details").html(str);
 	
 }
 
